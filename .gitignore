@@ -1,2 +1,4 @@
 prose2json
 bin/
+*.json
+*.txt
