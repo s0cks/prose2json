@@ -1,0 +1,24 @@
+{
+  "type": "object",
+  "required": ["text", "attrs"],
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "The exact text inside the quotation marks"
+    },
+    "attrs": {
+      "type": "object",
+      "required": ["by", "source"],
+      "properties": {
+        "by": {
+          "type": "string",
+          "description": "The speaker of the quote"
+        },
+        "source": {
+          "type": "string",
+          "description": "The source of the quote (book, movie, report, etc)"
+        }
+      }
+    }
+  }
+}
