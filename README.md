@@ -32,8 +32,9 @@ Flags:
 prose2json -s example/quote.json -o quote.result.json "$(cat example/quote.txt)"
 ```
 
+`quote.json`:
+
 ```json
-// quote.json
 {
   "type": "object",
   "required": ["text", "attrs"],
@@ -60,15 +61,18 @@ prose2json -s example/quote.json -o quote.result.json "$(cat example/quote.txt)"
 }
 ```
 
+`quote.txt`:
+
 ```txt
-// quote.txt
-In November 1964, after Hoover publicly denounced King during a Washington press conference as
+In November 1964, after Hoover publicly denounced King during
+a Washington press conference as
 "the most notorious liar in the country," FBI Deputy Director William Sullivan
 escalated the campaign into psychological warfare.
 ```
 
+`quote.result.json`:
+
 ```json
-// quote.result.json
 {
   "attrs": {
     "by": "Hoover",
