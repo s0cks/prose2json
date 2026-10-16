@@ -26,10 +26,56 @@ Flags:
   -s, --schema string   The schema to convert to
 ```
 
-Example:
+### Example
 
 ```sh
 prose2json -s example/quote.json -o quote.result.json "$(cat example/quote.txt)"
+```
+
+```json
+// quote.json
+{
+  "type": "object",
+  "required": ["text", "attrs"],
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "The exact text inside the quotation marks"
+    },
+    "attrs": {
+      "type": "object",
+      "required": ["by", "source"],
+      "properties": {
+        "by": {
+          "type": "string",
+          "description": "The speaker of the quote"
+        },
+        "source": {
+          "type": "string",
+          "description": "The source of the quote (book, movie, report, etc)"
+        }
+      }
+    }
+  }
+}
+```
+
+```txt
+// quote.txt
+In November 1964, after Hoover publicly denounced King during a Washington press conference as
+"the most notorious liar in the country," FBI Deputy Director William Sullivan
+escalated the campaign into psychological warfare.
+```
+
+```json
+// quote.result.json
+{
+  "attrs": {
+    "by": "Hoover",
+    "source": "Washington press conference"
+  },
+  "text": "the most notorious liar in the country"
+}
 ```
 
 ## Credits
